@@ -1,14 +1,13 @@
 from house_info import HouseInfo
 from datetime import date, datetime
 
-#ENERGY_PER_BULB = 0.2
-#ENERGY_BITS = 0x0F0
 class EnergyData(HouseInfo): #child class (inherits from class HouseInfo)
+
+    ENERGY_PER_BULB = 0.2
+    ENERGY_BITS = 0x0F0
 
     def _get_energy(self, rec): #private method to convert energy record
 
-        self.ENERGY_PER_BULB = 0.2
-        self.ENERGY_BITS = 0x0F0
         energy = int(rec, base=16)
         energy = energy & self.ENERGY_BITS 
         energy = energy >> 4
