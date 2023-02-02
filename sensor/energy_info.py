@@ -29,6 +29,7 @@ class EnergyData(HouseInfo): #child class (inherits from class HouseInfo)
         return self._convert_data(recs)
     
     def calculate_energy_usage(self, data): # store the sum of all converted values in the data list 
+        #for testing purpose
         total_energy = sum([self.ENERGY_PER_BULB * field for field in data])
         return total_energy
     
